@@ -1,46 +1,61 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import linkSharing from "@/assets/images/link-sharing.webp";
+import lamanoLandingPage from "@/assets/images/lamano.jpeg";
+import cprj from "@/assets/images/cprj.jpeg";
+import timbuShop from "@/assets/images/Timbu-shop.jpeg";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
-    results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
-    ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    company: "CPRJ",
+    year: "2024",
+    title: "Cprj landing page",
+    results: [{ title: "Increase the compagny visibility" }],
+    link: "https://jomagene.github.io/cprj/",
+    image: cprj,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "lamano-drc",
+    year: "2024",
+    title: "Lamano Landing Page",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Increase the compagny visibility and online audience" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://lamano.vercel.app/",
+    image: lamanoLandingPage,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "HNG internship",
+    year: "2024",
+    title: "Timbu shop",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Improved my react skills" },
+      { title: "Show case large project handling and team player capacity" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://timbu-cloud-shop-snowy.vercel.app/",
+    image: timbuShop,
+  },
+  {
+    company: "HNG internship",
+    year: "2024",
+    title: "Link sharing app",
+    results: [
+      { title: "Improved my next.js skills" },
+      { title: "Improved typescript skills" },
+      { title: "Increase my code stucture and readability" },
+    ],
+    link: "https://link-sharing-app-xene.vercel.app/",
+    image: linkSharing,
   },
 ];
 
 export const ProjectsSection = () => {
-  return <div>Projects Section</div>;
+  return (
+    <div>
+      <div className="container">
+        <p>Real-world Projects</p>
+        <h2>Featured Projects</h2>
+        <p>See how I transformed concepts into engaging digital experiences.</p>
+        <div></div>
+      </div>
+    </div>
+  );
 };
