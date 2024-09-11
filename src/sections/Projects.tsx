@@ -12,7 +12,10 @@ const portfolioProjects = [
     company: "CPRJ",
     year: "2024",
     title: "Cprj landing page",
-    results: [{ title: "Increase the compagny visibility" }],
+    results: [
+      { title: "Increase the compagny visibility" },
+      { title: "Increase the compagny audience" },
+    ],
     link: "https://jomagene.github.io/cprj/",
     image: cprj,
   },
@@ -22,6 +25,7 @@ const portfolioProjects = [
     title: "Lamano Landing Page",
     results: [
       { title: "Increase the compagny visibility and online audience" },
+      { title: "Increase the compagny professionalism and digitalization" },
     ],
     link: "https://lamano.vercel.app/",
     image: lamanoLandingPage,
