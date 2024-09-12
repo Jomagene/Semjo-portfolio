@@ -50,12 +50,12 @@ export const TestimonialsSection = () => {
           title="What Clients Say About Me"
           description="Don't just take my word for it. See what clients say about my Work"
         />
-        <div className="mt-16 flex overflow-x-clip">
+        <div className="mt-16 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-8 flex-none">
             {testimonials.map((testimonial) => (
               <Card key={testimonial.name} className="max-w-xs ">
                 <div className="flex gap-4 items-center">
-                  <div className="size-14 bg-gray-700 inline-flex rounded-full justify-center items-center">
+                  <div className="size-14 bg-gray-700 inline-flex rounded-full justify-center items-center flex-shrink-0">
                     <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}
