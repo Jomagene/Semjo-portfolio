@@ -41,21 +41,23 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   return (
-    <div>
-      <SectionHeader
-        eyebrow="Happy client"
-        title="What Clients Say About Me"
-        description="Don't just take my word for it. See what clients say about my Work"
-      />
-      <div>
-        {testimonials.map((testimonial) => (
-          <div key={testimonial.name}>
-            <Image src={testimonial.avatar} alt={testimonial.name} />
-            <div>{testimonial.name}</div>
-            <div>{testimonial.position}</div>
-            <p>{testimonial.text}</p>
-          </div>
-        ))}
+    <div className="py-16">
+      <div className="container">
+        <SectionHeader
+          eyebrow="Happy client"
+          title="What Clients Say About Me"
+          description="Don't just take my word for it. See what clients say about my Work"
+        />
+        <div>
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.name}>
+              <Image src={testimonial.avatar} alt={testimonial.name} />
+              <div>{testimonial.name}</div>
+              <div>{testimonial.position}</div>
+              <p>{testimonial.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
