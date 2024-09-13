@@ -1,6 +1,5 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import StarIcon from "@/assets/icons/star.svg";
 import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
@@ -41,7 +40,7 @@ export const AboutSection = () => {
           title="A Glimpse Into my world"
           description="Learn more about who I am, what I do, and what inspires me."
         />
-        <div className="mt-20">
+        <div className="mt-20 flex flex-col gap-8">
           <Card className="h-[320px]">
             <CardHeader
               title="My reads"
@@ -59,7 +58,11 @@ export const AboutSection = () => {
               className="px-6 pt-6"
             />
             <ToolboxItems items={toolboxItems} className="mt-6" />
-            <ToolboxItems items={toolboxItems} className="mt-6" />
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6"
+              itemsWrapperClassName="-translate-x-1/2"
+            />
           </Card>
           <Card>
             <CardHeader
