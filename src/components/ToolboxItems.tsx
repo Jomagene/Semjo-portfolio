@@ -24,7 +24,7 @@ export const ToolboxItems = ({
         {items.map((tool) => (
           <div
             key={tool.title}
-            className="inline-flex gap-4 px-3 py-2 outline outline-2 outline-white/10 rounded-lg">
+            className="inline-flex  items-center gap-4 px-3 py-2 outline outline-2 outline-white/10 rounded-lg">
             <span>
               <TechIcon component={tool.iconType} />
             </span>
