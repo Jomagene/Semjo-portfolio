@@ -22,13 +22,13 @@ const toolboxItems = [
   { title: "Github", iconType: GithubIcon },
 ];
 const hobbies = [
-  { title: "Reading", emoji: "📚", top: "", left: "" },
-  { title: "Fitness", emoji: "💪", top: "", left: "" },
-  { title: "Cooking", emoji: "🧑‍🍳", top: "", left: "" },
-  { title: "Listening to music", emoji: "🎧", top: "", left: "" },
-  { title: "Gaming", emoji: "🎮", top: "", left: "" },
-  { title: "Teaching", emoji: "👨‍🏫", top: "", left: "" },
-  { title: "Cinema", emoji: "🎬", top: "", left: "" },
+  { title: "Reading", emoji: "📚", top: "5%", left: "5%" },
+  { title: "Fitness", emoji: "💪", top: "5%", left: "50%" },
+  { title: "Cooking", emoji: "🧑‍🍳", top: "35%", left: "10%" },
+  { title: "Music", emoji: "🎧", top: "35%", left: "40%" },
+  { title: "Gaming", emoji: "🎮", top: "45%", left: "70%" },
+  { title: "Teaching", emoji: "👨‍🏫", top: "65%", left: "5%" },
+  { title: "Cinema", emoji: "🎬", top: "70%", left: "45%" },
 ];
 
 export const AboutSection = () => {
@@ -68,7 +68,7 @@ export const AboutSection = () => {
             <CardHeader
               title="Beyong the Code"
               description="Exlpore My interests and hobbies beyond the digital realm."
-              className="px-6 py-6"
+              className="p-6"
             />
             <div className="relative flex-1">
               {hobbies.map((hobby) => (
