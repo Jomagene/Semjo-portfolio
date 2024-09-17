@@ -25,10 +25,10 @@ const hobbies = [
   { title: "Reading", emoji: "📚", top: "5%", left: "5%" },
   { title: "Fitness", emoji: "💪", top: "5%", left: "50%" },
   { title: "Cooking", emoji: "🧑‍🍳", top: "35%", left: "10%" },
-  { title: "Music", emoji: "🎧", top: "35%", left: "40%" },
+  { title: "Music", emoji: "🎧", top: "40%", left: "35%" },
   { title: "Gaming", emoji: "🎮", top: "45%", left: "70%" },
-  { title: "Teaching", emoji: "👨‍🏫", top: "65%", left: "5%" },
   { title: "Cinema", emoji: "🎬", top: "70%", left: "45%" },
+  { title: "Teaching", emoji: "👨‍🏫", top: "65%", left: "5%" },
 ];
 
 export const AboutSection = () => {
@@ -41,53 +41,66 @@ export const AboutSection = () => {
           description="Learn more about who I am, what I do, and what inspires me."
         />
         <div className="mt-20 flex flex-col gap-8">
-          <Card className="h-[320px]">
-            <CardHeader
-              title="My reads"
-              description="Explpore the book shaping my perspectives."
-            />
-            <div className="w-40 mx-auto mt-8">
-              <Image src={bookImage} alt="Book cover" />
-            </div>
-          </Card>
-          <Card className="h-[320px] p-0">
-            <CardHeader
-              title="My toolbox"
-              description="Explpore the technologies and tools used to craft the digital
+          <div className="md:grid md:grid-cols-5 md:gap-8">
+            <Card className="h-[320px] md:col-span-2">
+              <CardHeader
+                title="My reads"
+                description="Explpore the book shaping my perspectives."
+              />
+              <div className="w-40 mx-auto mt-2">
+                <Image src={bookImage} alt="Book cover" />
+              </div>
+            </Card>
+            <Card className="h-[320px] p-0 md:col-span-3">
+              <CardHeader
+                title="My toolbox"
+                description="Explpore the technologies and tools used to craft the digital
                 experiences."
-              className="px-6 pt-6"
-            />
-            <ToolboxItems items={toolboxItems} className="mt-6" />
-            <ToolboxItems
-              items={toolboxItems}
-              className="mt-6"
-              itemsWrapperClassName="-translate-x-1/2"
-            />
-          </Card>
-          <Card className="h-[320px] p-0 flex flex-col">
-            <CardHeader
-              title="Beyong the Code"
-              description="Exlpore My interests and hobbies beyond the digital realm."
-              className="p-6"
-            />
-            <div className="relative flex-1">
-              {hobbies.map((hobby) => (
-                <div
-                  key={hobby.title}
-                  className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
-                  style={{ left: hobby.left, top: hobby.top }}>
-                  <span className="font-medium text-gray-950">
-                    {hobby.title}
-                  </span>
-                  <span>{hobby.emoji}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
-          <Card>
-            <Image src={mapImage} alt="map" />
-            <Image src={smileMemoji} alt="smilling memoji" />
-          </Card>
+              />
+              <ToolboxItems items={toolboxItems} />
+              <ToolboxItems
+                items={toolboxItems}
+                className="mt-6"
+                itemsWrapperClassName="-translate-x-1/2"
+              />
+            </Card>
+          </div>
+          <div className="md:grid md:grid-cols-5 md:gap-8">
+            <Card className="h-[320px] flex flex-col md:col-span-3">
+              <CardHeader
+                title="Beyong the Code"
+                description="Exlpore My interests and hobbies beyond the digital realm."
+                className="p-6"
+              />
+              <div className="relative flex-1">
+                {hobbies.map((hobby) => (
+                  <div
+                    key={hobby.title}
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute"
+                    style={{ left: hobby.left, top: hobby.top }}>
+                    <span className="font-medium text-gray-950">
+                      {hobby.title}
+                    </span>
+                    <span>{hobby.emoji}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+            <Card className="h-[320px] p-0 relative md:col-span-2">
+              <Image
+                src={mapImage}
+                alt="map"
+                className="size-full object-cover object-left-top"
+              />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:ring-offset-2 after:rounded-full after:outline-gray-950/30">
+                <Image
+                  src={smileMemoji}
+                  alt="smilling memoji"
+                  className="size-20"
+                />
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </div>
