@@ -57,11 +57,14 @@ export const AboutSection = () => {
                 description="Explpore the technologies and tools used to craft the digital
                 experiences."
               />
-              <ToolboxItems items={toolboxItems} />
+              <ToolboxItems
+                items={toolboxItems}
+                itemsWrapperClassName="animate-move-left [animation-duration:30s]"
+              />
               <ToolboxItems
                 items={toolboxItems}
                 className="mt-6"
-                itemsWrapperClassName="-translate-x-1/2"
+                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:50s]"
               />
             </Card>
           </div>
