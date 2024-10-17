@@ -28,7 +28,7 @@ const portfolioProjects = [
       { title: "Increase the compagny visibility and online audience" },
       { title: "Increase the compagny professionalism and digitalization" },
     ],
-    link: "https://lamano.vercel.app/",
+    link: "https://lamano-company.com/",
     image: lamanoLandingPage,
   },
   {
@@ -58,7 +58,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section className="pb-16 lg:py-24" id="projects">
       <div className="container">
         <SectionHeader
           eyebrow="Real-world Projects"
