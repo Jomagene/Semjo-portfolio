@@ -49,7 +49,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] md:col-span-2 lg:col-span-1 mb-8 md:mb-0">
               <CardHeader
                 title="My reads"
-                description="Explpore the book shaping my perspectives."
+                description="Explore the book shaping my perspectives."
               />
               <div className="w-40 mx-auto mt-2">
                 <Image src={bookImage} alt="Book cover" />
@@ -58,8 +58,7 @@ export const AboutSection = () => {
             <Card className="h-[320px] p-0 md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="My toolbox"
-                description="Explpore the technologies and tools used to craft the digital
-                experiences."
+                description="Explpore the technologies and tools used to craft the digital experiences."
               />
               <ToolboxItems
                 items={toolboxItems}
