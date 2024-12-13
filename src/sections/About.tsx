@@ -1,37 +1,37 @@
-"use client";
-import { SectionHeader } from "@/components/SectionHeader";
-import { Card } from "@/components/Card";
-import bookImage from "@/assets/images/book-cover.png";
-import Image from "next/image";
-import JavascriptIcon from "@/assets/icons/square-js.svg";
-import HTMLIcon from "@/assets/icons/html5.svg";
-import CssIcon from "@/assets/icons/css3.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
-import mapImage from "@/assets/images/map.png";
-import smileMemoji from "@/assets/images/memoji-smile.png";
-import { CardHeader } from "@/components/CardHeader";
-import { ToolboxItems } from "@/components/ToolboxItems";
-import { motion } from "framer-motion";
-import { useRef } from "react";
+'use client';
+import { SectionHeader } from '@/components/SectionHeader';
+import { Card } from '@/components/Card';
+import bookImage from '@/assets/images/book-cover.png';
+import Image from 'next/image';
+import JavascriptIcon from '@/assets/icons/square-js.svg';
+import HTMLIcon from '@/assets/icons/html5.svg';
+import CssIcon from '@/assets/icons/css3.svg';
+import ReactIcon from '@/assets/icons/react.svg';
+import ChromeIcon from '@/assets/icons/chrome.svg';
+import GithubIcon from '@/assets/icons/github.svg';
+import mapImage from '@/assets/images/map.png';
+import smileMemoji from '@/assets/images/memoji-smile.jpg';
+import { CardHeader } from '@/components/CardHeader';
+import { ToolboxItems } from '@/components/ToolboxItems';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const toolboxItems = [
-  { title: "Javascript", iconType: JavascriptIcon },
-  { title: "HTML5", iconType: HTMLIcon },
-  { title: "CSS3", iconType: CssIcon },
-  { title: "React", iconType: ReactIcon },
-  { title: "Chrome", iconType: ChromeIcon },
-  { title: "Github", iconType: GithubIcon },
+  { title: 'Javascript', iconType: JavascriptIcon },
+  { title: 'HTML5', iconType: HTMLIcon },
+  { title: 'CSS3', iconType: CssIcon },
+  { title: 'React', iconType: ReactIcon },
+  { title: 'Chrome', iconType: ChromeIcon },
+  { title: 'Github', iconType: GithubIcon },
 ];
 const hobbies = [
-  { title: "Reading", emoji: "📚", top: "5%", left: "5%" },
-  { title: "Fitness", emoji: "💪", top: "5%", left: "50%" },
-  { title: "Cooking", emoji: "🧑‍🍳", top: "35%", left: "10%" },
-  { title: "Music", emoji: "🎧", top: "40%", left: "35%" },
-  { title: "Gaming", emoji: "🎮", top: "45%", left: "70%" },
-  { title: "Cinema", emoji: "🎬", top: "70%", left: "45%" },
-  { title: "Teaching", emoji: "👨‍🏫", top: "65%", left: "5%" },
+  { title: 'Reading', emoji: '📚', top: '5%', left: '5%' },
+  { title: 'Fitness', emoji: '💪', top: '5%', left: '50%' },
+  { title: 'Cooking', emoji: '🧑‍🍳', top: '35%', left: '10%' },
+  { title: 'Music', emoji: '🎧', top: '40%', left: '35%' },
+  { title: 'Gaming', emoji: '🎮', top: '45%', left: '70%' },
+  { title: 'Cinema', emoji: '🎬', top: '70%', left: '45%' },
+  { title: 'Teaching', emoji: '👨‍🏫', top: '65%', left: '5%' },
 ];
 
 export const AboutSection = () => {
@@ -105,7 +105,7 @@ export const AboutSection = () => {
                 <Image
                   src={smileMemoji}
                   alt="smilling memoji"
-                  className="size-20"
+                  className="size-20 rounded-full"
                 />
               </div>
             </Card>
