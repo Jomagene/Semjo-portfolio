@@ -7,7 +7,11 @@ const footerLinks = [
     title: 'Frontendmentor',
     href: 'https://www.frontendmentor.io/profile/Jomagene',
   },
-  { title: 'LinkedIn', href: 'https://www.linkedin.com/in/jo%C3%ABl-magene/' },
+  {
+    title: 'Mail',
+    href: 'mailto:semjomagene@gmail.com',
+  },
+  { title: 'Telegram', href: 'https://t.me/joelmagene' },
 ];
 
 export const Footer = () => {
@@ -22,9 +26,10 @@ export const Footer = () => {
               <a
                 key={link.title}
                 href={link.href}
-                className="inline-flex items-center gap-1.5 cursor-pointer">
+                target="_blank"
+                className="inline-flex items-center gap-1.5 cursor-pointer group">
                 <span className="font-semibold">{link.title}</span>
-                <ArrowUpRightIcon className="size-4" />
+                <ArrowUpRightIcon className="size-4 transition-all group-hover:rotate-45 group-hover:translate-x-2" />
               </a>
             ))}
           </nav>
