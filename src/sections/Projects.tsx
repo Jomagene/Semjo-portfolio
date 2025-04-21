@@ -1,58 +1,134 @@
-import linkSharing from "@/assets/images/link-sharing.webp";
-import lamanoLandingPage from "@/assets/images/lamano.jpeg";
-import cprj from "@/assets/images/cprj.jpeg";
-import timbuShop from "@/assets/images/Timbu-shop.jpeg";
-import Image from "next/image";
-import CheckCircleIcon from "@/assets/icons/check-circle.svg";
-import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import { SectionHeader } from "@/components/SectionHeader";
-import { Card } from "@/components/Card";
+import lamanoLandingPage from '@/assets/images/lamano.jpeg';
+import cprj from '@/assets/images/cprj.jpeg';
+import conferenceTicketGenerator from '@/assets/images/conference-ticket-gen.jpg';
+import tantorLearning from '@/assets/images/tantor-learning.png';
+import genzAd from '@/assets/images/genzAd.png';
+import Image from 'next/image';
+import CheckCircleIcon from '@/assets/icons/check-circle.svg';
+import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
+import { SectionHeader } from '@/components/SectionHeader';
+import { Card } from '@/components/Card';
 
 const portfolioProjects = [
   {
-    company: "CPRJ",
-    year: "2024",
-    title: "Cprj landing page",
+    company: 'HNG12 Internship',
+    year: '2025',
+    title: 'Genz Ad Generator',
     results: [
-      { title: "Increase the compagny visibility" },
-      { title: "Increase the compagny audience" },
+      {
+        title:
+          'Live deployed ad generator with polished UX and multi-step dynamic form.',
+      },
+      {
+        title:
+          'Advanced Next.js app showcasing API integration, form validation, and route protection.',
+      },
+      {
+        title:
+          'Demonstrated production-readiness, collaboration, and team communication.',
+      },
     ],
-    link: "https://jomagene.github.io/cprj/",
-    image: cprj,
+    link: 'https://genz.ad',
+    image: genzAd,
   },
   {
-    company: "lamano-drc",
-    year: "2024",
-    title: "Lamano Landing Page",
+    company: 'Tantor Hub',
+    year: '2025',
+    title: 'Tantor Learning Frontend',
     results: [
-      { title: "Increase the compagny visibility and online audience" },
-      { title: "Increase the compagny professionalism and digitalization" },
+      {
+        title:
+          'Scalable e-learning platform using Next.js, Redux Toolkit, and Tailwind CSS.',
+      },
+      {
+        title:
+          'Designed role-based dashboards, AI tools integration, and clean API handling.',
+      },
+      { title: 'Solid architecture, authentication, and real SaaS structure.' },
     ],
-    link: "https://lamano-company.com/",
+    link: 'https://github.com/Tantor-Hub/Tantor-Learning-frontend',
+    image: tantorLearning,
+  },
+  {
+    company: 'Lamano DRC',
+    year: '2024',
+    title: 'Lamano Landing Page',
+    results: [
+      {
+        title: 'Professional showcase for interior wooden decoration business.',
+      },
+      { title: 'Improved credibility and web presence of a local brand.' },
+      { title: 'Clean design, responsive layout, and performance-focused.' },
+    ],
+    link: 'https://lamano-company.com/',
     image: lamanoLandingPage,
   },
   {
-    company: "HNG internship",
-    year: "2024",
-    title: "Timbu shop",
+    company: 'HNG12 Internship (Stage 2)',
+    year: '2025',
+    title: 'Conference Ticket Generator',
     results: [
-      { title: "Improved my react skills" },
-      { title: "Show case large project handling and team player capacity" },
+      {
+        title: 'Custom ticket generation with dynamic form and QR integration.',
+      },
+      { title: 'TypeScript-based form validation and ShadCN UI usage.' },
+      { title: 'Focused on usability and clean, component-based structure.' },
     ],
-    link: "https://timbu-cloud-shop-snowy.vercel.app/",
-    image: timbuShop,
+    link: 'https://hng12-stage2-conference-ticket-generator-ten.vercel.app/',
+    image: conferenceTicketGenerator,
   },
   {
-    company: "HNG internship",
-    year: "2024",
-    title: "Link sharing app",
+    company: 'HNG12 Internship (Stage 3)',
+    year: '2025',
+    title: 'AI Text Interface',
     results: [
-      { title: "Improved my next.js skills" },
-      { title: "Improved typescript skills" },
-      { title: "Increase my code stucture and readability" },
+      {
+        title:
+          'AI-powered assistant interface built with Next.js, OpenAI, and Chrome APIs.',
+      },
+      {
+        title:
+          'Zod validation, prompt engineering, and modular TypeScript code.',
+      },
+      {
+        title:
+          'Showcases AI integration, clean UX, and scalable layout design.',
+      },
     ],
-    link: "https://link-sharing-app-xene.vercel.app/",
-    image: linkSharing,
+    link: 'https://gtext-ai.vercel.app/',
+    // image: aiTextInterface,
+  },
+  {
+    company: 'CPRJ',
+    year: '2024',
+    title: 'Cprj Landing Page',
+    results: [
+      {
+        title: 'Community NGO website to boost online visibility and outreach.',
+      },
+      { title: 'Built with semantic HTML, Sass, and Flexbox layout.' },
+      {
+        title:
+          'Accessible, responsive and simple navigation for local audiences.',
+      },
+    ],
+    link: 'https://jomagene.github.io/cprj/',
+    image: cprj,
+  },
+  {
+    company: 'HNG12 Internship (Stage 1)',
+    year: '2025',
+    title: 'Guess Color Game',
+    results: [
+      { title: 'Fun mini-game built in React using state-based game logic.' },
+      {
+        title:
+          'Practiced interaction, visual contrast, and guessing mechanics.',
+      },
+      { title: 'Focused on playability and front-end logic design.' },
+    ],
+    link: 'https://jomagene-color-guess.netlify.app/',
+    // image: guessColorGame,
   },
 ];
 
@@ -103,11 +179,11 @@ export const ProjectsSection = () => {
                   </a>
                 </div>
                 <div className="relative">
-                  <Image
+                  {/* <Image
                     src={project.image}
                     alt={project.title}
                     className="mt-8 -mb-4 md:mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
-                  />
+                  /> */}
                 </div>
               </div>
             </Card>
