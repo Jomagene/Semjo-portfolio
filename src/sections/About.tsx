@@ -15,6 +15,7 @@ import { CardHeader } from '@/components/CardHeader';
 import { ToolboxItems } from '@/components/ToolboxItems';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { BioSection } from '@/components/BioSection';
 
 // Enhanced toolbox items with more information
 const toolboxItems = [
@@ -178,114 +179,7 @@ export const AboutSection = () => {
 
         <div className="mt-24 space-y-16">
           {/* Bio Section - New! */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative">
-            <Card className="p-8 md:p-12 overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-500/10 to-sky-500/10 blur-3xl -z-10" />
-
-              <div className="grid md:grid-cols-3 gap-10">
-                <div className="md:col-span-2">
-                  <h3 className="font-serif text-3xl font-bold mb-6">
-                    My Journey
-                  </h3>
-                  <div className="space-y-4 text-white/80">
-                    <p>
-                      I&apos;m a passionate frontend developer with a love for
-                      creating beautiful, accessible, and performant web
-                      experiences. My journey began 5 years ago when I built my
-                      first HTML page, and I&apos;ve been hooked ever since.
-                    </p>
-                    <p>
-                      With experience across startups and larger teams,
-                      I&apos;ve developed a keen eye for detail and a commitment
-                      to writing clean, maintainable code. I believe that great
-                      interfaces should be both visually stunning and
-                      functionally intuitive.
-                    </p>
-                    <p>
-                      When I&apos;m not coding, you&apos;ll find me exploring
-                      new technologies, contributing to open source, or
-                      mentoring junior developers. I&apos;m currently focused on
-                      mastering Next.js and exploring the exciting possibilities
-                      of AI integration in web applications.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="relative aspect-square overflow-hidden rounded-2xl">
-                    <Image
-                      src={smileMemoji}
-                      alt="Profile image"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/30 via-transparent to-sky-500/30 mix-blend-overlay" />
-                  </div>
-
-                  <div className="absolute -bottom-6 -right-6 size-32 bg-gradient-to-br from-emerald-400/20 to-sky-400/20 rounded-full blur-2xl -z-10" />
-                </div>
-              </div>
-            </Card>
-          </motion.div>
-
-          {/* Skills & Tools Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}>
-            <Card className="p-0 overflow-hidden">
-              <div className="p-8 md:p-10">
-                <CardHeader
-                  title="Technical Expertise"
-                  description="The tools and technologies I use to bring ideas to life."
-                  className="mb-6"
-                />
-              </div>
-
-              <ToolboxItems
-                items={toolboxItems}
-                itemsWrapperClassName="animate-move-left [animation-duration:60s]"
-              />
-
-              <div className="p-8 md:p-10 mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-medium text-lg mb-2">
-                      Frontend Wizardry
-                    </h4>
-                    <p className="text-sm text-white/70">
-                      Specializing in React ecosystem with deep knowledge of
-                      performance optimization and state management patterns.
-                    </p>
-                  </div>
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-medium text-lg mb-2">
-                      Design Sensibility
-                    </h4>
-                    <p className="text-sm text-white/70">
-                      Strong eye for design systems, animation principles, and
-                      translating mockups into pixel-perfect interfaces.
-                    </p>
-                  </div>
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-medium text-lg mb-2">
-                      Modern Architecture
-                    </h4>
-                    <p className="text-sm text-white/70">
-                      Building with scalability in mind using microservices,
-                      SSR/SSG approaches, and API integration best practices.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </motion.div>
+          <BioSection />
 
           {/* Books & Hobbies Section */}
           <div className="grid md:grid-cols-2 gap-8">
@@ -386,6 +280,60 @@ export const AboutSection = () => {
               </Card>
             </motion.div>
           </div>
+
+          {/* Skills & Tools Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}>
+            <Card className="p-0 overflow-hidden">
+              <div className="p-8 md:p-10">
+                <CardHeader
+                  title="Technical Expertise"
+                  description="The tools and technologies I use to bring ideas to life."
+                  className="mb-6"
+                />
+              </div>
+
+              <ToolboxItems
+                items={toolboxItems}
+                itemsWrapperClassName="animate-move-left [animation-duration:60s]"
+              />
+
+              <div className="p-8 md:p-10 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                    <h4 className="font-medium text-lg mb-2">
+                      Frontend Wizardry
+                    </h4>
+                    <p className="text-sm text-white/70">
+                      Specializing in React ecosystem with deep knowledge of
+                      performance optimization and state management patterns.
+                    </p>
+                  </div>
+                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                    <h4 className="font-medium text-lg mb-2">
+                      Design Sensibility
+                    </h4>
+                    <p className="text-sm text-white/70">
+                      Strong eye for design systems, animation principles, and
+                      translating mockups into pixel-perfect interfaces.
+                    </p>
+                  </div>
+                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                    <h4 className="font-medium text-lg mb-2">
+                      Modern Architecture
+                    </h4>
+                    <p className="text-sm text-white/70">
+                      Building with scalability in mind using microservices,
+                      SSR/SSG approaches, and API integration best practices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
 
           {/* Map Section */}
           <motion.div
