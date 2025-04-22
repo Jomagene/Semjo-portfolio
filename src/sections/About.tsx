@@ -345,7 +345,6 @@ export const AboutSection = () => {
                 <CardHeader
                   title="Technical Expertise"
                   description="The tools and technologies I use to bring ideas to life."
-                  className="mb-6"
                 />
               </div>
 

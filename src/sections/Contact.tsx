@@ -278,16 +278,17 @@ export const ContactSection: React.FC = () => {
               animate={{ left: '120%' }}
               transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
             />
-
-            <span className="font-semibold w-max text-nowrap relative z-10">
-              Contact Me
-            </span>
-            <motion.span
-              initial={{ x: 0 }}
-              whileHover={{ x: 3 }}
-              transition={{ duration: 0.3 }}>
-              <ArrowUpRightIcon className="size-4" />
-            </motion.span>
+            <a href="tel:+243821358144" className="flex gap-2 flex-nowrap">
+              <span className="font-semibold w-max text-nowrap relative z-10">
+                Call via Phone
+              </span>
+              <motion.span
+                initial={{ x: 0 }}
+                whileHover={{ x: 3 }}
+                transition={{ duration: 0.3 }}>
+                <ArrowUpRightIcon className="size-4" />
+              </motion.span>
+            </a>
           </motion.button>
         </motion.div>
       </div>
