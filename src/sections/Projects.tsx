@@ -190,11 +190,11 @@ export const ProjectsSection = () => {
             Interested in working together? I&#39;m always open to new
             opportunities.
           </p>
-          <a href="#contact">
+          <a href="#contacts">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-white text-gray-900 h-14 px-8 rounded-xl font-medium inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all">
+              className="bg-white text-gray-900 h-12 px-8 rounded-xl font-medium inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all">
               <span>Let&#39;s Talk</span>
               <svg
                 className="w-4 h-4"
