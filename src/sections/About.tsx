@@ -146,6 +146,7 @@ export const AboutSection = () => {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0]);
 
   return (
     <div
@@ -195,7 +196,7 @@ export const AboutSection = () => {
                     <p>
                       I&apos;m a passionate frontend developer with a love for
                       creating beautiful, accessible, and performant web
-                      experiences. My journey began 3 years ago when I built my
+                      experiences. My journey began 5 years ago when I built my
                       first HTML page, and I&apos;ve been hooked ever since.
                     </p>
                     <p>
@@ -207,11 +208,10 @@ export const AboutSection = () => {
                     </p>
                     <p>
                       When I&apos;m not coding, you&apos;ll find me exploring
-                      new technologies through reading books, contributing to
-                      open source, writing technical articles, or mentoring
-                      junior developers. I&apos;m currently focused on mastering
-                      Next.js and exploring the exciting possibilities of AI
-                      integration in web applications.
+                      new technologies, contributing to open source, or
+                      mentoring junior developers. I&apos;m currently focused on
+                      mastering Next.js and exploring the exciting possibilities
+                      of AI integration in web applications.
                     </p>
                   </div>
                 </div>
