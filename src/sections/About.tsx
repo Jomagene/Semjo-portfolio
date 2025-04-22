@@ -121,20 +121,23 @@ const books = [
   {
     title: 'Atomic Habits',
     author: 'James Clear',
-    image: bookImage, // Replace with actual images
     description: 'Tiny changes, remarkable results',
   },
   {
     title: 'Clean Code',
     author: 'Robert C. Martin',
-    image: bookImage, // Replace with actual images
     description: 'A handbook of agile software craftsmanship',
   },
   {
     title: 'Refactoring UI',
     author: 'Adam Wathan & Steve Schoger',
-    image: bookImage, // Replace with actual images
     description: 'Make your UI designs shine',
+  },
+  {
+    title: 'Fullstack Open',
+    author: 'University of Helsinki',
+    description:
+      'Modern web app development with React, TypeScript, Node.js, and GraphQL',
   },
 ];
 
@@ -147,7 +150,6 @@ export const AboutSection = () => {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0]);
 
   return (
     <div
@@ -196,33 +198,84 @@ export const AboutSection = () => {
                   className="mb-6"
                 />
 
-                <div className="space-y-6">
-                  {books.map((book, index) => (
-                    <motion.div
-                      key={book.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.1 * index + 0.3, duration: 0.5 }}
-                      viewport={{ once: true }}
-                      className="flex gap-4 items-center">
-                      <div className="w-16 h-24 flex-shrink-0 rounded-md overflow-hidden bg-gray-800">
-                        <Image
-                          src={book.image}
-                          alt={book.title}
-                          width={64}
-                          height={96}
-                          className="object-cover h-full w-full"
+                <div className="p-6">
+                  <div className="mb-4 flex items-center justify-between">
+                    <h3 className="text-xl font-bold text-white">
+                      Learning Resources
+                    </h3>
+                    <div className="text-sm text-white/60 flex items-center gap-2">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M6 2h12v20l-6-4-6 4V2z"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">{book.title}</h4>
-                        <p className="text-sm text-white/60">{book.author}</p>
-                        <p className="text-xs text-white/50 mt-1">
-                          {book.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ))}
+                      </svg>
+                      <span>Books that shaped my journey</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {books.map((book, index) => (
+                      <motion.div
+                        key={book.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 * index + 0.2, duration: 0.5 }}
+                        viewport={{ once: true }}
+                        whileHover={{
+                          scale: 1.03,
+                          transition: { duration: 0.2 },
+                        }}
+                        className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 group hover:bg-gradient-to-br hover:from-white/10 hover:to-transparent transition-all duration-300">
+                        <div className="flex flex-col justify-center">
+                          <div className="flex items-center">
+                            <h4 className="font-medium text-white group-hover:text-emerald-400 transition-colors duration-300">
+                              {book.title}
+                            </h4>
+                            <motion.div
+                              initial={{ opacity: 0, width: 0 }}
+                              whileInView={{ opacity: 1, width: 'auto' }}
+                              transition={{
+                                delay: 0.4 + index * 0.1,
+                                duration: 0.5,
+                              }}
+                              className="ml-2">
+                              {index === 0 && (
+                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-nowrap">
+                                  Mindset
+                                </span>
+                              )}
+                              {index === 1 && (
+                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-nowrap">
+                                  Favorite
+                                </span>
+                              )}
+                              {index === 2 && (
+                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-nowrap">
+                                  Essential
+                                </span>
+                              )}
+                              {index === 3 && (
+                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 text-white text-nowrap">
+                                  In progress
+                                </span>
+                              )}
+                            </motion.div>
+                          </div>
+                          <p className="text-sm text-white/60">{book.author}</p>
+                          <div className="h-px w-full bg-gradient-to-r from-white/10 to-transparent my-2" />
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </Card>
             </motion.div>
@@ -353,9 +406,8 @@ export const AboutSection = () => {
               <div className="absolute bottom-8 left-8 max-w-md">
                 <h3 className="text-2xl font-bold mb-2">Location</h3>
                 <p className="text-white/80">
-                  Based in Kinshasa, Democratic Republic of Congo. Available for
-                  remote work worldwide and selective on-site projects in
-                  Africa.
+                  Based in Gisenyi, Rwanda. Available for remote work worldwide
+                  and selective on-site projects in Africa.
                 </p>
               </div>
 

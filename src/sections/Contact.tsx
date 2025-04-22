@@ -1,8 +1,6 @@
 'use client';
 import { motion, useAnimation, Variants } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
 import grainImage from '@/assets/images/grain.jpg';
 
@@ -118,11 +116,6 @@ export const ContactSection: React.FC = () => {
         ease: 'easeOut',
       },
     }),
-    hover: {
-      y: -5,
-      color: '#0369a1', // Sky-600 color
-      transition: { type: 'spring', stiffness: 400, damping: 10 },
-    },
   };
 
   // Floating particles
@@ -235,7 +228,7 @@ export const ContactSection: React.FC = () => {
           ))}
 
           {/* Text content with enhanced styling */}
-          <div className="md:max-w-xl relative">
+          <div className="md:max-w-[1000px] relative">
             <motion.h2
               className="font-serif text-2xl md:text-3xl tracking-tight text-gray-800 drop-shadow-sm"
               variants={textVariants}>
@@ -259,11 +252,14 @@ export const ContactSection: React.FC = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-700 transition-all duration-300 flex items-center gap-1 px-3 py-1 rounded-full hover:bg-white/20 backdrop-blur-sm"
+                  className="text-sm font-medium text-white bg-gray-800 transition-all duration-300 flex items-center gap-2 px-4 py-2 rounded-lg shadow-lg group"
                   custom={index}
                   variants={socialVariants}
                   whileHover="hover">
-                  {link.title}
+                  <span className="group-hover:scale-105 duration-500">
+                    {link.title}
+                  </span>
+                  <ArrowUpRightIcon className="size-4 transition-all duration-500 delay-200 group-hover:rotate-45 group-hover:translate-x-2" />
                 </motion.a>
               ))}
             </motion.div>
@@ -283,7 +279,7 @@ export const ContactSection: React.FC = () => {
               transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
             />
 
-            <span className="font-semibold w-max relative z-10">
+            <span className="font-semibold w-max text-nowrap relative z-10">
               Contact Me
             </span>
             <motion.span

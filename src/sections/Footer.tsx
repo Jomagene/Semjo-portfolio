@@ -13,6 +13,7 @@ const footerLinks = [
   },
   { title: 'Telegram', href: 'https://t.me/joelmagene' },
 ];
+const year = new Date().getFullYear();
 
 export const Footer = () => {
   return (
@@ -20,8 +21,10 @@ export const Footer = () => {
       <div className="absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
       <div className="container relative -z-9">
         <div className="border-t border-white/15 py-6 text-sm flex flex-col items-center gap-8">
-          <div className="text-white/40">&copy; 2024. All rights reserved.</div>
-          <nav className="flex flex-col md:flex-row items-center gap-8 ">
+          <div className="text-white/40">
+            &copy; {year}. All rights reserved.
+          </div>
+          <nav className="flex flex-col md:flex-row items-center gap-8 md:hidden">
             {footerLinks.map((link) => (
               <a
                 key={link.title}

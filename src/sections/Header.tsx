@@ -8,7 +8,7 @@ export const Header = () => {
   const overlayRef = useRef(null);
 
   const sections = [
-    { id: 'home', label: 'Home', href: '#' },
+    { id: 'home', label: 'Home', href: '#home' },
     { id: 'projects', label: 'Projects', href: '#projects' },
     { id: 'about', label: 'About', href: '#about' },
     { id: 'contacts', label: 'Contact', href: '#contacts' },
