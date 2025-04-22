@@ -2,7 +2,7 @@ import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
 
 const footerLinks = [
   { title: 'Github', href: 'https://github.com/Jomagene' },
-  { title: 'Twitter', href: 'https://x.com/jomagene' },
+  { title: 'Twitter', href: 'https://x.com/jomagene98' },
   {
     title: 'Frontendmentor',
     href: 'https://www.frontendmentor.io/profile/Jomagene',
