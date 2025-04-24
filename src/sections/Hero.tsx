@@ -172,17 +172,17 @@ export const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="max-w-xl mx-auto mt-8">
             <h1 className="font-serif text-2xl md:text-4xl text-center my-6 tracking-wide bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-              Crafting Responsive & Interactive Web Experiences
+              Building Interfaces That Perform and Delight
             </h1>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
               className="mt-6 text-center text-white/70 md:text-lg">
-              I transform designs into high-performance React applications with
+              I bring designs to life through high-performance applications with
               clean code and pixel-perfect implementation. Specializing in
-              modern frontend development that combines aesthetics with
-              functionality.
+              modern frontend development that combines aesthetics,
+              interractivity with functionality.
             </motion.p>
           </motion.div>
 
@@ -223,7 +223,7 @@ export const HeroSection = () => {
                   }}>
                   👋
                 </motion.span>
-                <span className="font-semibold">Collaborate</span>
+                <span className="font-semibold">Let&apos;s Collaborate</span>
               </button>
             </motion.a>
           </motion.div>

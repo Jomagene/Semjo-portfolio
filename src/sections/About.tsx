@@ -45,7 +45,7 @@ export const AboutSection = () => {
           <SectionHeader
             eyebrow="Beyond the Code"
             title="The Human Behind the Developer"
-            description="Discover my journey, technical expertise, and what makes me tick beyond the world of programming."
+            description="Discover my journey, technical expertise, and what makes me tick beyond the world of programming; from civil engineering to frontend development"
           />
         </motion.div>
 

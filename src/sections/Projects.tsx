@@ -58,8 +58,8 @@ export const ProjectsSection = () => {
           viewport={{ once: true }}
           className="mt-24 text-center">
           <p className="text-lg text-white/70 mb-6">
-            Interested in working together? I&#39;m always open to new
-            opportunities.
+            🤝 Let’s Talk Always open to new collaborations, freelance gigs, and
+            part/full-time opportunities.
           </p>
           <a href="#contacts">
             <motion.button
