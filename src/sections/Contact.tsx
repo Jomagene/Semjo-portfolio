@@ -137,7 +137,7 @@ export const ContactSection: React.FC = () => {
 
           {/* Contact button with enhanced animation */}
           <motion.button
-            className="text-white bg-gradient-to-br from-sky-600 to-blue-700 hover:from-sky-500 hover:to-blue-600 flex items-center px-4 lg:px-6 h-12 rounded-xl gap-2 mt-6 md:mt-0 shadow-md relative overflow-hidden group"
+            className="text-white bg-gradient-to-br from-sky-600 to-blue-700 hover:from-sky-500 hover:to-blue-600 flex items-center pl-4 pr-6 lg:pl-6 lg:pr-8 h-12 rounded-xl gap-2 mt-6 md:mt-0 shadow-md relative overflow-hidden group"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap">
@@ -150,7 +150,7 @@ export const ContactSection: React.FC = () => {
             />
             <a
               href="tel:+243821358144"
-              className="flex items-center group gap-2 min-w-60 flex-nowrap">
+              className="flex items-center group gap-2 flex-nowrap">
               <span className="font-semibold text-nowrap relative z-10">
                 Call via Phone
               </span>

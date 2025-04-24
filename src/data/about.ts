@@ -55,49 +55,42 @@ const hobbies = [
     title: 'Reading',
     emoji: '📚',
     description: 'Tech books & social ralated',
-    color: 'from-blue-400 to-indigo-600',
     position: { top: '5%', left: '15%' },
   },
   {
     title: 'Fitness',
     emoji: '💪',
     description: 'Strength training & running',
-    color: 'from-red-400 to-orange-600',
     position: { top: '15%', left: '70%' },
   },
   {
     title: 'Cooking',
     emoji: '🧑‍🍳',
     description: 'Local cuisines',
-    color: 'from-amber-400 to-yellow-600',
     position: { top: '35%', left: '20%' },
   },
   {
     title: 'Music',
     emoji: '🎧',
     description: 'Piano & gospel',
-    color: 'from-purple-400 to-fuchsia-600',
     position: { top: '40%', left: '60%' },
   },
   {
     title: 'Gaming',
     emoji: '🎮',
     description: 'Strategy & Football',
-    color: 'from-green-400 to-emerald-600',
     position: { top: '65%', left: '75%' },
   },
   {
     title: 'Cinema',
     emoji: '🎬',
     description: 'Actions & Annimes',
-    color: 'from-blue-400 to-sky-600',
     position: { top: '70%', left: '35%' },
   },
   {
     title: 'Teaching',
     emoji: '👨‍🏫',
     description: 'Web dev mentoring',
-    color: 'from-emerald-400 to-teal-600',
     position: { top: '65%', left: '5%' },
   },
 ];
@@ -106,34 +99,22 @@ const books = [
   {
     title: 'Atomic Habits',
     author: 'James Clear',
-    badge: {
-      label: 'Mindset',
-      color: 'from-amber-500 to-orange-500',
-    },
+    badge: 'Mindset',
   },
   {
     title: 'Clean Code',
     author: 'Robert C. Martin',
-    badge: {
-      label: 'Favorite',
-      color: 'from-emerald-500 to-teal-500',
-    },
+    badge: 'Favorite',
   },
   {
     title: 'Refactoring UI',
     author: 'Adam Wathan & Steve Schoger',
-    badge: {
-      label: 'Essential',
-      color: 'from-indigo-500 to-purple-500',
-    },
+    badge: 'Essential',
   },
   {
     title: 'Fullstack Open',
     author: 'University of Helsinki',
-    badge: {
-      label: 'In progress',
-      color: 'from-sky-500 to-cyan-500',
-    },
+    badge: 'In progress',
   },
 ];
 

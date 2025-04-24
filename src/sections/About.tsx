@@ -119,8 +119,16 @@ export const AboutSection = () => {
                               }}
                               className="ml-2">
                               <span
-                                className={`text-xs py-0.5 px-2 rounded-full bg-gradient-to-r ${book.badge.color} text-white text-nowrap`}>
-                                {book.badge.label}
+                                className={`text-xs py-0.5 px-2 rounded-full bg-gradient-to-r ${
+                                  book.title === 'Atomic Habits'
+                                    ? 'from-amber-500 to-orange-500'
+                                    : book.title === 'Clean Code'
+                                    ? 'from-emerald-500 to-teal-500'
+                                    : book.title === 'Refactoring UI'
+                                    ? 'from-indigo-500 to-purple-500'
+                                    : 'from-sky-500 to-cyan-500'
+                                } text-white text-nowrap`}>
+                                {book.badge}
                               </span>
                             </motion.div>
                           </div>
@@ -151,7 +159,23 @@ export const AboutSection = () => {
                   {hobbies.map((hobby, index) => (
                     <motion.div
                       key={hobby.title}
-                      className={`inline-flex flex-col gap-1 p-3 bg-gradient-to-r ${hobby.color} rounded-xl absolute cursor-grab active:cursor-grabbing shadow-lg`}
+                      className={`inline-flex flex-col gap-1 p-3 bg-gradient-to-r ${
+                        hobby.title === 'Reading'
+                          ? 'from-blue-400 to-indigo-600'
+                          : hobby.title === 'Fitness'
+                          ? 'from-red-400 to-orange-600'
+                          : hobby.title === 'Cooking'
+                          ? 'from-amber-400 to-yellow-600'
+                          : hobby.title === 'Music'
+                          ? 'from-purple-400 to-fuchsia-600'
+                          : hobby.title === 'Gaming'
+                          ? 'from-green-400 to-emerald-600'
+                          : hobby.title === 'Cinema'
+                          ? 'from-blue-400 to-sky-600'
+                          : hobby.title === 'Teaching'
+                          ? 'from-emerald-400 to-teal-600'
+                          : ''
+                      } rounded-xl absolute cursor-grab active:cursor-grabbing shadow-lg`}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{
                         opacity: 1,
