@@ -7,7 +7,6 @@ import StarIcon from '@/assets/icons/star.svg';
 import SparkleIcon from '@/assets/icons/sparkle.svg';
 import { HeroOrbit } from '@/components/HeroOrbit';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
 export const HeroSection = () => {
   return (

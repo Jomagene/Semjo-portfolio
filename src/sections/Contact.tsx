@@ -1,64 +1,15 @@
 'use client';
-import { motion, useAnimation, Variants } from 'framer-motion';
+import { motion, useAnimation, Variants, useInView } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
 import grainImage from '@/assets/images/grain.jpg';
-
-// Define types for social links
-interface SocialLink {
-  title: string;
-  href: string;
-}
-
-// Social links array
-const socialLinks: SocialLink[] = [
-  { title: 'Github', href: 'https://github.com/Jomagene' },
-  { title: 'Twitter', href: 'https://x.com/jomagene98' },
-  {
-    title: 'Frontendmentor',
-    href: 'https://www.frontendmentor.io/profile/Jomagene',
-  },
-  { title: 'Mail', href: 'mailto:semjomagene@gmail.com' },
-  { title: 'Telegram', href: 'https://t.me/joelmagene' },
-];
+import { socialLinks } from '@/data/contacts';
 
 export const ContactSection: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const controls = useAnimation();
+  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
-  // Handle intersection observer to trigger animations when section is in view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          controls.start('visible');
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, [controls]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
-
-  // Animation variants
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -66,7 +17,7 @@ export const ContactSection: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.7,
-        ease: [0.22, 1, 0.36, 1], // Custom cubic bezier for smooth easing
+        ease: [0.22, 1, 0.36, 1],
         staggerChildren: 0.1,
       },
     },
@@ -96,15 +47,6 @@ export const ContactSection: React.FC = () => {
     tap: { scale: 0.97 },
   };
 
-  const shineVariants: Variants = {
-    hidden: { opacity: 0, scale: 0 },
-    visible: {
-      opacity: 0.3,
-      scale: 1,
-      transition: { delay: 0.5, duration: 0.8, ease: 'easeOut' },
-    },
-  };
-
   const socialVariants: Variants = {
     hidden: { opacity: 0, y: 10 },
     visible: (i) => ({
@@ -118,26 +60,9 @@ export const ContactSection: React.FC = () => {
     }),
   };
 
-  // Floating particles
-  const floatingParticles = Array.from({ length: 10 }).map((_, i) => ({
-    id: i,
-    size: Math.random() * 15 + 5,
-    duration: Math.random() * 8 + 12,
-    delay: Math.random() * 5,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-  }));
-
-  // Enhanced color palette for particles and effects
-  const particleColors = [
-    'bg-sky-300/60',
-    'bg-sky-100/70',
-    'bg-emerald-200/60',
-    'bg-teal-200/50',
-    'bg-white/40',
-    'bg-blue-300/50',
-    'bg-cyan-200/60',
-  ];
+  useEffect(() => {
+    if (isInView) controls.start('visible');
+  }, [isInView, controls]);
 
   return (
     <section className="py-16 pt-12 lg:py-24 lg:pt-20" id="contacts">
@@ -147,8 +72,7 @@ export const ContactSection: React.FC = () => {
           className="relative bg-gradient-to-br from-cyan-400 via-sky-400 to-teal-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left overflow-hidden z-0 md:flex md:justify-between items-center md:gap-8 shadow-lg shadow-sky-400/20"
           initial="hidden"
           animate={controls}
-          variants={containerVariants}
-          onMouseMove={handleMouseMove}>
+          variants={containerVariants}>
           {/* Enhanced gradient overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 -z-10" />
 
@@ -174,59 +98,6 @@ export const ContactSection: React.FC = () => {
             style={{ filter: 'blur(15px)' }}
           />
 
-          {/* Animated spotlight/shine effect that follows cursor */}
-          <motion.div
-            className="absolute h-64 w-64 rounded-full bg-gradient-radial from-white to-transparent blur-2xl pointer-events-none -z-5"
-            initial="hidden"
-            animate="visible"
-            variants={shineVariants}
-            style={{
-              x: mousePosition.x - 128,
-              y: mousePosition.y - 128,
-            }}
-          />
-
-          {/* Floating particles with enhanced colors */}
-          {floatingParticles.map((particle) => (
-            <motion.div
-              key={particle.id}
-              className={`absolute rounded-full ${
-                particleColors[particle.id % particleColors.length]
-              } pointer-events-none`}
-              initial={{
-                x: `${particle.x}%`,
-                y: `${particle.y}%`,
-                opacity: 0,
-              }}
-              animate={{
-                opacity: [0, 0.7, 0.7, 0],
-                y: [
-                  `${particle.y}%`,
-                  `${particle.y - 20}%`,
-                  `${particle.y - 40}%`,
-                  `${particle.y - 60}%`,
-                ],
-                x: [
-                  `${particle.x}%`,
-                  `${particle.x + 5}%`,
-                  `${particle.x - 5}%`,
-                  `${particle.x + 10}%`,
-                ],
-              }}
-              transition={{
-                duration: particle.duration,
-                repeat: Infinity,
-                delay: particle.delay,
-                ease: 'easeInOut',
-              }}
-              style={{
-                width: particle.size,
-                height: particle.size,
-                filter: 'blur(1px)',
-              }}
-            />
-          ))}
-
           {/* Text content with enhanced styling */}
           <div className="md:max-w-[1000px] relative">
             <motion.h2
@@ -242,7 +113,6 @@ export const ContactSection: React.FC = () => {
               discuss how I can help you achieve goals
             </motion.p>
 
-            {/* Social links with enhanced hover effects */}
             <motion.div
               className="mt-4 hidden md:flex gap-4 flex-wrap"
               variants={textVariants}>

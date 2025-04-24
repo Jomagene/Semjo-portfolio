@@ -1,18 +1,5 @@
 import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
-
-const footerLinks = [
-  { title: 'Github', href: 'https://github.com/Jomagene' },
-  { title: 'Twitter', href: 'https://x.com/jomagene98' },
-  {
-    title: 'Frontendmentor',
-    href: 'https://www.frontendmentor.io/profile/Jomagene',
-  },
-  {
-    title: 'Mail',
-    href: 'mailto:semjomagene@gmail.com',
-  },
-  { title: 'Telegram', href: 'https://t.me/joelmagene' },
-];
+import { socialLinks } from '@/data/contacts';
 const year = new Date().getFullYear();
 
 export const Footer = () => {
@@ -25,7 +12,7 @@ export const Footer = () => {
             &copy; {year}. All rights reserved.
           </div>
           <nav className="flex flex-col md:flex-row items-center gap-8 md:hidden">
-            {footerLinks.map((link) => (
+            {socialLinks.map((link) => (
               <a
                 key={link.title}
                 href={link.href}
