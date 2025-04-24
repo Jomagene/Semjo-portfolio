@@ -43,7 +43,7 @@ export const portfolioProjects = [
       },
       { title: 'Solid architecture, authentication, and real SaaS structure.' },
     ],
-    link: 'https://tantor-learning-frontend.vercel.app/',
+    link: 'https://tantor-learning-frontend.vercel.app/dashboard/student',
     image: tantorLearning,
   },
   {

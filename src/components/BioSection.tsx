@@ -72,7 +72,7 @@ export const BioSection = () => {
 
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10">
                 <span className="text-xs">🌍</span>
-                <span className="text-xs">Gisenyi, Rwanda → Global Remote</span>
+                <span className="text-xs">Goma, DRC → Global Remote</span>
               </div>
             </div>
           </div>

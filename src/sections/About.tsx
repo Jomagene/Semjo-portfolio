@@ -268,8 +268,8 @@ export const AboutSection = () => {
               <div className="absolute bottom-8 left-8 max-w-md">
                 <h3 className="text-2xl font-bold mb-2">Location</h3>
                 <p className="text-white/80">
-                  Based in Gisenyi, Rwanda. Available for remote work worldwide
-                  and selective on-site projects in Africa.
+                  Based in Goma, DRC. Available for remote work worldwide and
+                  selective on-site projects in Africa.
                 </p>
               </div>
 
