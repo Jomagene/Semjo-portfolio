@@ -232,13 +232,13 @@ export const ContactSection: React.FC = () => {
             <motion.h2
               className="font-serif text-2xl md:text-3xl tracking-tight text-gray-800 drop-shadow-sm"
               variants={textVariants}>
-              Let&#44;s create something amazing together
+              Let&apos;s create something amazing together
             </motion.h2>
 
             <motion.p
               className="text-sm md:text-base my-2 text-gray-700"
               variants={textVariants}>
-              Ready to bring your next project to life? Let&#44;s connect and
+              Ready to bring your next project to life? Let&apos;s connect and
               discuss how I can help you achieve goals
             </motion.p>
 
@@ -259,7 +259,7 @@ export const ContactSection: React.FC = () => {
                   <span className="group-hover:scale-105 duration-500">
                     {link.title}
                   </span>
-                  <ArrowUpRightIcon className="size-4 transition-all duration-500 delay-200 group-hover:rotate-45 group-hover:translate-x-2" />
+                  <ArrowUpRightIcon className="size-4 transition-all duration-500 group-hover:rotate-45 group-hover:translate-x-2" />
                 </motion.a>
               ))}
             </motion.div>
@@ -267,7 +267,7 @@ export const ContactSection: React.FC = () => {
 
           {/* Contact button with enhanced animation */}
           <motion.button
-            className="text-white bg-gradient-to-br from-sky-600 to-blue-700 hover:from-sky-500 hover:to-blue-600 inline-flex items-center px-6 h-12 rounded-xl gap-2 mt-6 md:mt-0 shadow-md relative overflow-hidden group"
+            className="text-white bg-gradient-to-br from-sky-600 to-blue-700 hover:from-sky-500 hover:to-blue-600 flex items-center px-4 lg:px-6 h-12 rounded-xl gap-2 mt-6 md:mt-0 shadow-md relative overflow-hidden group"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap">
@@ -280,15 +280,12 @@ export const ContactSection: React.FC = () => {
             />
             <a
               href="tel:+243821358144"
-              className="flex gap-2 min-w-52 flex-nowrap">
+              className="flex items-center group gap-2 min-w-60 flex-nowrap">
               <span className="font-semibold text-nowrap relative z-10">
                 Call via Phone
               </span>
-              <motion.span
-                initial={{ x: 0 }}
-                whileHover={{ x: 3 }}
-                transition={{ duration: 0.3 }}>
-                <ArrowUpRightIcon className="size-4" />
+              <motion.span>
+                <ArrowUpRightIcon className="size-4 transition-all duration-500 group-hover:rotate-45 group-hover:translate-x-2" />
               </motion.span>
             </a>
           </motion.button>

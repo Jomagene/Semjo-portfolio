@@ -1,14 +1,8 @@
 'use client';
 import { SectionHeader } from '@/components/SectionHeader';
 import { Card } from '@/components/Card';
-import bookImage from '@/assets/images/book-cover.png';
 import Image from 'next/image';
-import JavascriptIcon from '@/assets/icons/square-js.svg';
-import HTMLIcon from '@/assets/icons/html5.svg';
-import CssIcon from '@/assets/icons/css3.svg';
-import ReactIcon from '@/assets/icons/react.svg';
-import ChromeIcon from '@/assets/icons/chrome.svg';
-import GithubIcon from '@/assets/icons/github.svg';
+import { techSpecials, books, hobbies, toolboxItems } from '@/data/about';
 import mapImage from '@/assets/images/map.png';
 import smileMemoji from '@/assets/images/memoji-smile.jpg';
 import { CardHeader } from '@/components/CardHeader';
@@ -16,130 +10,6 @@ import { ToolboxItems } from '@/components/ToolboxItems';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { BioSection } from '@/components/BioSection';
-
-// Enhanced toolbox items with more information
-const toolboxItems = [
-  {
-    title: 'Javascript',
-    iconType: JavascriptIcon,
-    proficiency: 90,
-    description: 'ES6+, TypeScript, and async patterns for robust applications',
-    color: 'text-yellow-400',
-  },
-  {
-    title: 'HTML5',
-    iconType: HTMLIcon,
-    proficiency: 95,
-    description: 'Semantic markup with accessibility standards in mind',
-    color: 'text-orange-500',
-  },
-  {
-    title: 'CSS3',
-    iconType: CssIcon,
-    proficiency: 85,
-    description: 'Modern layouts with Flexbox, Grid and animations',
-    color: 'text-blue-500',
-  },
-  {
-    title: 'React',
-    iconType: ReactIcon,
-    proficiency: 88,
-    description: 'Component architecture with hooks and context',
-    color: 'text-cyan-400',
-  },
-  {
-    title: 'Chrome',
-    iconType: ChromeIcon,
-    proficiency: 75,
-    description: 'DevTools mastery and extension development',
-    color: 'text-green-400',
-  },
-  {
-    title: 'Github',
-    iconType: GithubIcon,
-    proficiency: 80,
-    description: 'Version control, CI/CD and collaboration workflows',
-    color: 'text-purple-400',
-  },
-];
-
-// Enhanced hobby items with additional info
-const hobbies = [
-  {
-    title: 'Reading',
-    emoji: '📚',
-    description: 'Tech books & sci-fi novels',
-    color: 'from-blue-400 to-indigo-600',
-    position: { top: '5%', left: '15%' },
-  },
-  {
-    title: 'Fitness',
-    emoji: '💪',
-    description: 'Strength training & running',
-    color: 'from-red-400 to-orange-600',
-    position: { top: '15%', left: '70%' },
-  },
-  {
-    title: 'Cooking',
-    emoji: '🧑‍🍳',
-    description: 'International cuisines',
-    color: 'from-amber-400 to-yellow-600',
-    position: { top: '35%', left: '20%' },
-  },
-  {
-    title: 'Music',
-    emoji: '🎧',
-    description: 'Piano & classic rock',
-    color: 'from-purple-400 to-fuchsia-600',
-    position: { top: '40%', left: '60%' },
-  },
-  {
-    title: 'Gaming',
-    emoji: '🎮',
-    description: 'Strategy & RPGs',
-    color: 'from-green-400 to-emerald-600',
-    position: { top: '65%', left: '75%' },
-  },
-  {
-    title: 'Cinema',
-    emoji: '🎬',
-    description: 'Documentaries & thrillers',
-    color: 'from-blue-400 to-sky-600',
-    position: { top: '70%', left: '35%' },
-  },
-  {
-    title: 'Teaching',
-    emoji: '👨‍🏫',
-    description: 'Web dev mentoring',
-    color: 'from-emerald-400 to-teal-600',
-    position: { top: '65%', left: '5%' },
-  },
-];
-
-// Reading list with actual books
-const books = [
-  {
-    title: 'Atomic Habits',
-    author: 'James Clear',
-    description: 'Tiny changes, remarkable results',
-  },
-  {
-    title: 'Clean Code',
-    author: 'Robert C. Martin',
-    description: 'A handbook of agile software craftsmanship',
-  },
-  {
-    title: 'Refactoring UI',
-    author: 'Adam Wathan & Steve Schoger',
-    description: 'Make your UI designs shine',
-  },
-  {
-    title: 'Fullstack Open',
-    author: 'University of Helsinki',
-    description:
-      'Modern web app development with React, TypeScript, Node.js, and GraphQL',
-  },
-];
 
 export const AboutSection = () => {
   const constraintRef = useRef(null);
@@ -248,26 +118,10 @@ export const AboutSection = () => {
                                 duration: 0.5,
                               }}
                               className="ml-2">
-                              {index === 0 && (
-                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-nowrap">
-                                  Mindset
-                                </span>
-                              )}
-                              {index === 1 && (
-                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-nowrap">
-                                  Favorite
-                                </span>
-                              )}
-                              {index === 2 && (
-                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-nowrap">
-                                  Essential
-                                </span>
-                              )}
-                              {index === 3 && (
-                                <span className="text-xs py-0.5 px-2 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 text-white text-nowrap">
-                                  In progress
-                                </span>
-                              )}
+                              <span
+                                className={`text-xs py-0.5 px-2 rounded-full bg-gradient-to-r ${book.badge.color} text-white text-nowrap`}>
+                                {book.badge.label}
+                              </span>
                             </motion.div>
                           </div>
                           <p className="text-sm text-white/60">{book.author}</p>
@@ -326,7 +180,7 @@ export const AboutSection = () => {
                   ))}
 
                   {/* Helper text */}
-                  <div className="absolute bottom-2 right-2 text-xs text-white/40 italic">
+                  <div className="absolute bottom-2 right-5 text-xs text-white/40 italic">
                     Drag these bubbles around!
                   </div>
                 </div>
@@ -355,33 +209,18 @@ export const AboutSection = () => {
 
               <div className="p-8 md:p-10 mt-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-medium text-lg mb-2">
-                      Frontend Wizardry
-                    </h4>
-                    <p className="text-sm text-white/70">
-                      Specializing in React ecosystem with deep knowledge of
-                      performance optimization and state management patterns.
-                    </p>
-                  </div>
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-medium text-lg mb-2">
-                      Design Sensibility
-                    </h4>
-                    <p className="text-sm text-white/70">
-                      Strong eye for design systems, animation principles, and
-                      translating mockups into pixel-perfect interfaces.
-                    </p>
-                  </div>
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-medium text-lg mb-2">
-                      Modern Architecture
-                    </h4>
-                    <p className="text-sm text-white/70">
-                      Building with scalability in mind using microservices,
-                      SSR/SSG approaches, and API integration best practices.
-                    </p>
-                  </div>
+                  {techSpecials.map((special) => (
+                    <div
+                      key={special.title}
+                      className="p-6 rounded-xl bg-white/5 border border-white/10">
+                      <h4 className="font-medium text-lg mb-2">
+                        {special.title}
+                      </h4>
+                      <p className="text-sm text-white/70">
+                        {special.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </Card>
