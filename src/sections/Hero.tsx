@@ -10,17 +10,11 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export const HeroSection = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   return (
     <div
       className="py-14 md:py-24 lg:py-28 relative z-0 overflow-x-clip"
       id="home">
-      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_top,transparent,black_10%,black_70%,transparent)]">
         <div
           className="absolute inset-0 -z-30 opacity-5"
           style={{ backgroundImage: `url(${grainImage.src})` }}></div>
@@ -103,7 +97,7 @@ export const HeroSection = () => {
         </HeroOrbit>
       </div>
 
-      <div className="container relative overflow-hidden pb-5">
+      <div className="container relative pb-5">
         {/* Animated particles */}
         <div className="absolute inset-0 overflow-hidden">
           {Array.from({ length: 20 }).map((_, i) => (

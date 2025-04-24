@@ -152,18 +152,20 @@ export const Header = () => {
       </AnimatePresence>
 
       {/* Header Navigation */}
-      <div className="flex justify-center items-center fixed top-3 w-full z-10">
+      <div className="flex justify-center items-center fixed top-4 w-full z-10">
         <motion.nav
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex gap-1 p-0.5 border-white/15 border bg-white/10 backdrop-blur rounded-full">
+          className="flex gap-2 px-4 py-2 border border-white/20 bg-black/40 backdrop-blur-md rounded-full shadow-lg">
           {sections.map((section, index) => (
             <motion.a
               key={section.id}
               href={section.href}
-              className={`nav-item relative overflow-hidden ${
-                active === index ? 'active' : ''
+              className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                active === index
+                  ? 'text-black'
+                  : 'text-white hover:text-gray-200'
               }`}
               onClick={(e) => handleNavigation(index, section.href, e)}
               whileHover={{ scale: 1.05 }}
@@ -171,7 +173,7 @@ export const Header = () => {
               {active === index && (
                 <motion.div
                   layoutId="activeBackground"
-                  className="absolute inset-0 bg-white rounded-full"
+                  className="absolute inset-0 bg-white rounded-full shadow-md"
                   initial={false}
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 />

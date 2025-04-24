@@ -273,13 +273,15 @@ export const ContactSection: React.FC = () => {
             whileTap="tap">
             {/* Button shine effect */}
             <motion.span
-              className="absolute w-16 h-full bg-white/20 -skew-x-12 pointer-events-none"
+              className="absolute w-10 h-full bg-white/20 -skew-x-12 pointer-events-none"
               initial={{ left: '-20%' }}
               animate={{ left: '120%' }}
-              transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
             />
-            <a href="tel:+243821358144" className="flex gap-2 flex-nowrap">
-              <span className="font-semibold w-max text-nowrap relative z-10">
+            <a
+              href="tel:+243821358144"
+              className="flex gap-2 min-w-52 flex-nowrap">
+              <span className="font-semibold text-nowrap relative z-10">
                 Call via Phone
               </span>
               <motion.span

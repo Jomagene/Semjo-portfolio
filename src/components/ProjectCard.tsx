@@ -1,15 +1,9 @@
-// components/ProjectCard.tsx
 'use client';
 
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
-import {
-  CheckCircleIcon,
-  ArrowUpRightIcon,
-  ExternalLinkIcon,
-} from 'lucide-react';
-import { Card } from '@/components/Card';
+import { CheckCircleIcon, ExternalLinkIcon } from 'lucide-react';
 
 export default function ProjectCard({
   project,

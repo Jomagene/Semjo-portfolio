@@ -12,7 +12,7 @@ import ProjectCard from '@/components/ProjectCard';
 
 const portfolioProjects = [
   {
-    company: 'HNG12 Internship',
+    company: 'HNG',
     year: '2025',
     title: 'Genz Ad Generator',
     results: [
@@ -35,7 +35,7 @@ const portfolioProjects = [
   {
     company: 'Tantor Hub',
     year: '2025',
-    title: 'Tantor Learning Frontend',
+    title: 'Tantor Learning (WIP!!!)',
     results: [
       {
         title:
@@ -47,11 +47,11 @@ const portfolioProjects = [
       },
       { title: 'Solid architecture, authentication, and real SaaS structure.' },
     ],
-    link: 'https://github.com/Tantor-Hub/Tantor-Learning-frontend',
+    link: 'https://tantor-learning-frontend.vercel.app/',
     image: tantorLearning,
   },
   {
-    company: 'Lamano DRC',
+    company: 'Lamano Company',
     year: '2024',
     title: 'Lamano Landing Page',
     results: [
@@ -65,7 +65,7 @@ const portfolioProjects = [
     image: lamanoLandingPage,
   },
   {
-    company: 'HNG12 Internship (Stage 2)',
+    company: 'HNG',
     year: '2025',
     title: 'Conference Ticket Generator',
     results: [
@@ -79,13 +79,13 @@ const portfolioProjects = [
     image: conferenceTicketGenerator,
   },
   {
-    company: 'HNG12 Internship (Stage 3)',
+    company: 'HNG',
     year: '2025',
-    title: 'AI Text Interface',
+    title: 'GText AI',
     results: [
       {
         title:
-          'AI-powered assistant interface built with Next.js, OpenAI, and Chrome APIs.',
+          'AI-powered assistant interface built with Next.js and Chrome APIs.',
       },
       {
         title:
@@ -107,7 +107,7 @@ const portfolioProjects = [
       {
         title: 'Community NGO website to boost online visibility and outreach.',
       },
-      { title: 'Built with semantic HTML, Sass, and Flexbox layout.' },
+      { title: 'Built with semantic HTML and Bootstrap' },
       {
         title:
           'Accessible, responsive and simple navigation for local audiences.',
@@ -117,7 +117,7 @@ const portfolioProjects = [
     image: cprj,
   },
   {
-    company: 'HNG12 Internship (Stage 1)',
+    company: 'HNG',
     year: '2025',
     title: 'Guess Color Game',
     results: [
