@@ -1,13 +1,14 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SectionIds, useActiveSection } from '@/hooks/useActiveSection';
 
 export const Header = () => {
   const [active, setActive] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const overlayRef = useRef(null);
 
-  const sections = [
+  const sections: SectionIds[] = [
     { id: 'home', label: 'Home', href: '#home' },
     { id: 'projects', label: 'Projects', href: '#projects' },
     { id: 'about', label: 'About', href: '#about' },
@@ -23,6 +24,7 @@ export const Header = () => {
     if (active === index) return;
 
     setTransitioning(true);
+    setActive(index);
 
     // Simulate page transition with overlay animation
     setTimeout(() => {
@@ -31,8 +33,10 @@ export const Header = () => {
       // Scroll to the section after the animation
       const element = document.querySelector(href);
       if (element) {
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({
-          top: element.getBoundingClientRect().top + window.scrollY - 100,
+          top: elementPosition,
           behavior: 'smooth',
         });
       }
@@ -45,6 +49,8 @@ export const Header = () => {
       }, 600);
     }, 400);
   };
+
+  const activeSection = useActiveSection(sections);
 
   return (
     <>
@@ -163,14 +169,14 @@ export const Header = () => {
               key={section.id}
               href={section.href}
               className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                active === index
+                activeSection === section.id
                   ? 'text-black'
                   : 'text-white hover:text-gray-200'
               }`}
               onClick={(e) => handleNavigation(index, section.href, e)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}>
-              {active === index && (
+              {activeSection === section.id && (
                 <motion.div
                   layoutId="activeBackground"
                   className="absolute inset-0 bg-white rounded-full shadow-md"
