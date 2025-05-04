@@ -95,7 +95,15 @@ export const BioSection = () => {
                         {journey.skills.map((skill) => (
                           <span
                             key={skill}
-                            className={`text-xs font-medium px-2 py-1 rounded-full bg-gradient-to-r ${journey.color}`}>
+                            className={`text-xs font-medium px-2 py-1 rounded-full bg-gradient-to-r ${
+                              journey.category == 'Foundation'
+                                ? 'from-amber-500/80 to-orange-500/80'
+                                : journey.category == 'Advanced'
+                                ? 'from-sky-500/80 to-blue-600/80'
+                                : journey.category == 'Styling'
+                                ? 'from-pink-500/80 to-purple-600/80'
+                                : 'from-emerald-500/80 to-green-600/80'
+                            }`}>
                             {skill}
                           </span>
                         ))}
